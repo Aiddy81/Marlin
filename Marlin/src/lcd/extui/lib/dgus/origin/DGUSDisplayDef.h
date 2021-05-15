@@ -16,35 +16,37 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #pragma once
 
+#include "../DGUSDisplayDef.h"
+
 enum DGUSLCD_Screens : uint8_t {
-  DGUSLCD_SCREEN_BOOT = 0,
-  DGUSLCD_SCREEN_MAIN = 10,
-  DGUSLCD_SCREEN_TEMPERATURE = 20,
-  DGUSLCD_SCREEN_STATUS = 30,
-  DGUSLCD_SCREEN_STATUS2 = 32,
-  DGUSLCD_SCREEN_MANUALMOVE = 40,
-  DGUSLCD_SCREEN_MANUALEXTRUDE=42,
-  DGUSLCD_SCREEN_FANANDFEEDRATE = 44,
-  DGUSLCD_SCREEN_FLOWRATES = 46,
-  DGUSLCD_SCREEN_SDFILELIST = 50,
+  DGUSLCD_SCREEN_BOOT                = 0,
+  DGUSLCD_SCREEN_MAIN                = 10,
+  DGUSLCD_SCREEN_TEMPERATURE         = 20,
+  DGUSLCD_SCREEN_STATUS              = 30,
+  DGUSLCD_SCREEN_STATUS2             = 32,
+  DGUSLCD_SCREEN_MANUALMOVE          = 40,
+  DGUSLCD_SCREEN_MANUALEXTRUDE       = 42,
+  DGUSLCD_SCREEN_FANANDFEEDRATE      = 44,
+  DGUSLCD_SCREEN_FLOWRATES           = 46,
+  DGUSLCD_SCREEN_SDFILELIST          = 50,
   DGUSLCD_SCREEN_SDPRINTMANIPULATION = 52,
-  DGUSLCD_SCREEN_POWER_LOSS = 100,
-  DGUSLCD_SCREEN_PREHEAT=120,
-  DGUSLCD_SCREEN_UTILITY=110,
-  DGUSLCD_SCREEN_FILAMENT_HEATING=146,
-  DGUSLCD_SCREEN_FILAMENT_LOADING=148,
-  DGUSLCD_SCREEN_FILAMENT_UNLOADING=158,
-  DGUSLCD_SCREEN_SDPRINTTUNE = 170,
-  DGUSLCD_SCREEN_CONFIRM = 240,
-  DGUSLCD_SCREEN_KILL = 250, ///< Kill Screen. Must always be 250 (to be able to display "Error wrong LCD Version")
-  DGUSLCD_SCREEN_WAITING = 251,
-  DGUSLCD_SCREEN_POPUP = 252,  ///< special target, popup screen will also return this code to say "return to previous screen"
-  DGUSLDC_SCREEN_UNUSED = 255
+  DGUSLCD_SCREEN_POWER_LOSS          = 100,
+  DGUSLCD_SCREEN_PREHEAT             = 120,
+  DGUSLCD_SCREEN_UTILITY             = 110,
+  DGUSLCD_SCREEN_FILAMENT_HEATING    = 146,
+  DGUSLCD_SCREEN_FILAMENT_LOADING    = 148,
+  DGUSLCD_SCREEN_FILAMENT_UNLOADING  = 158,
+  DGUSLCD_SCREEN_SDPRINTTUNE         = 170,
+  DGUSLCD_SCREEN_CONFIRM             = 240,
+  DGUSLCD_SCREEN_KILL                = 250, ///< Kill Screen. Must always be 250 (to be able to display "Error wrong LCD Version")
+  DGUSLCD_SCREEN_WAITING             = 251,
+  DGUSLCD_SCREEN_POPUP               = 252, ///< special target, popup screen will also return this code to say "return to previous screen"
+  DGUSLDC_SCREEN_UNUSED              = 255
 };
 
 // Display Memory layout used (T5UID)
@@ -192,7 +194,7 @@ constexpr uint16_t VP_Flowrate_E1 = 0x3092; // 2 Byte Integer
 //constexpr uint16_t VP_Flowrate_E5 = 0x309A;
 
 constexpr uint16_t VP_Fan0_Percentage = 0x3100;  // 2 Byte Integer (0..100)
-//constexpr uint16_t VP_Fan1_Percentage = 0x33A2;  // 2 Byte Integer (0..100)
+constexpr uint16_t VP_Fan1_Percentage = 0x33A2;  // 2 Byte Integer (0..100)
 //constexpr uint16_t VP_Fan2_Percentage = 0x33A4;  // 2 Byte Integer (0..100)
 //constexpr uint16_t VP_Fan3_Percentage = 0x33A6;  // 2 Byte Integer (0..100)
 
